@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 2%;
+    background-color: white;
+}
+
+.input {
+    width: 90%;
+    height: 7%;
+    border: 0px solid rgba(237, 233, 233, 0.92);
+    margin-top: 10px;
+    background-color: rgba(237, 233, 233, 0.92);
+}
+
+.button {
+    margin-top: 100px;
+    width: 90%;
+    height: 8%;;
+    background-color: rgb(17, 176, 17);
+    border: rgb(17, 176, 17) ;
+    border-radius: 5px;
+}

@@ -1,0 +1,11 @@
+.HeaderRight {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 5%;
+  min-width: 10%;
+}
+
+.p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

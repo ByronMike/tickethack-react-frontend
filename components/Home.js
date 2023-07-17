@@ -1,16 +1,24 @@
 import styles from "../styles/Home.module.css";
-import HeaderLeft from "./HeaderLeft";
-import HeaderRight from "./HeaderRight";
+import HeaderLeft from "./header/HeaderLeft";
+import HeaderRight from "./header/HeaderRight";
+import MainTop from "./main/MainTop";
+import MainBottom from "./main/MainBottom";
+import Footer from "./footer/Footer";
 
 function Home() {
   return (
-    <div >
-      <header>
+    <div className={styles.body}>
+      <header className={styles.header}>
         <HeaderLeft />
         <HeaderRight />
       </header>
-      <main></main>
-      <footer></footer>
+      <main className={styles.main}>
+        <MainTop />
+        <MainBottom />
+      </main>
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
     </div>
   );
 }
