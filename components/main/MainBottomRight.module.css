@@ -1,17 +1,21 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 350px;
-    border-radius: 2%;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 350px;
+  border-radius: 2%;
+  background-color: white;
 }
 
 .separator {
-    margin: 30px;
-    width: 100px;
-    height: 2px;
-    background-color: green;
+  margin: 30px;
+  width: 100px;
+  height: 2px;
+  background-color: green;
+}
+
+.p {
+  padding-right: 10px;
 }
