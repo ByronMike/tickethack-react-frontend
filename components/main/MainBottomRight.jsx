@@ -1,23 +1,24 @@
 import styles from "./MainBottomRight.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import trainPicture from "../../public/images/train.png";
 
 const MainBottomRight = ({ trips }) => {
   let content;
 
-console.log("trips", trips)
+  console.log("trips", trips.data);
 
   function handleUpdateTripBooking(tripId) {
+    console.log("handleUpdateTripBookin", "click");
     fetch("http://localhost:3000/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       // Note : this.id in the body property of the POST request is a reference to the ID of the trip associated with the clicked element. This assumes that the clicked element has an id attribute that contains the trip ID.
       body: JSON.stringify({ tripId: tripId }),
-    })
-      .then((response) => response.json())
-      // .then((data) => {
-      //   data.result && window.location.assign("cart.html");
-      // });
+    }).then((response) => response.json());
+    // .then((data) => {
+    //   data.result && window.location.assign("cart.html");
+    // });
   }
 
   if (trips.result === undefined) {
@@ -50,11 +51,18 @@ console.log("trips", trips)
           const hours = String(tripDate.getHours()).padStart(2, "0");
           const minutes = String(tripDate.getMinutes()).padStart(2, "0");
           return (
-            <li style={{ display: "flex", justifyContent: "flex-start" }}>
+            <li
+              key={trip._id}
+              style={{ display: "flex", justifyContent: "flex-start" }}
+            >
               <p className={styles.p}>{trip.departure}</p>
               <p className={styles.p}>{trip.arrival}</p>
               <p className={styles.p}>{`${hours}:${minutes}`}</p>
-              <button>Book</button>
+              <Link href="/cart">
+                <button onClick={() => handleUpdateTripBooking(trip._id)}>
+                  Book
+                </button>
+              </Link>
             </li>
           );
         })}

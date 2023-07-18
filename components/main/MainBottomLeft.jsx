@@ -2,8 +2,8 @@ import styles from "./MainBottomLeft.module.css";
 import { useState } from "react";
 
 const MainBottomLeft = ({ updateTrips }) => {
-  const [departure, setDeparture] = useState("Paris");
-  const [arrival, setArrival] = useState("Lyon");
+  const [departure, setDeparture] = useState("Marseille");
+  const [arrival, setArrival] = useState("Paris");
   const [date, setDate] = useState("2022-11-08");
 
   const handleDeparture = (event) => {
