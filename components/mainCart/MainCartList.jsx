@@ -1,22 +1,45 @@
-const MainCartList = ({ cartData }) => {
-    console.log("cartDataProps", cartData)
-  return (
+import React, { useEffect, useState } from "react";
+
+const MainCartList = ({ cartData, handleUpdateCardData }) => {
+  const [data, setData] = useState([]);
+
+  function handleRemoveFromCart(tripId) {
+    fetch(`http://localhost:3000/cart/${tripId}`, { method: "DELETE" })
+      .then((response) => response.json())
+      .then((responseData) => {
+        if (responseData.result) {
+          // Call the API to fetch the updated cart data
+          fetch("http://localhost:3000/cart")
+            .then((response) => response.json())
+            .then((cartData) => {
+              setData(cartData.data);
+              handleUpdateCardData(cartData.data);
+            });
+        }
+      });
+  }
+
+  useEffect(() => {
+    if (cartData && cartData.data) {
+      setData(cartData.data);
+    }
+  }, [cartData]);
+
+  return data ? (
     <ul>
-      {cartData?.data.map((addedTrip) => {
-                //   const tripDate = new Date(addedTrip.date);
-                //   const hours = String(tripDate.getHours()).padStart(2, "0");
-                //   const minutes = String(tripDate.getMinutes()).padStart(2, "0");
-        return (
-          <li key={addedTrip.trip._id}>
-            <p>{addedTrip.trip.departure}</p>
-            <p>{addedTrip.trip.arrival}</p>
-            <p>{addedTrip.trip.date}</p>
-            {/* <p className={styles.p}>{`${hours}:${minutes}`}</p> */}
-            <button></button>
-          </li>
-        );
-      })}
+      {data.map((addedTrip) => (
+        <li key={addedTrip.trip._id}>
+          <p>{addedTrip.trip.departure}</p>
+          <p>{addedTrip.trip.arrival}</p>
+          <p>{`${addedTrip.hour}:${addedTrip.minute}`}</p>
+          <button onClick={() => handleRemoveFromCart(addedTrip.trip._id)}>
+            X
+          </button>
+        </li>
+      ))}
     </ul>
+  ) : (
+    <></>
   );
 };
 

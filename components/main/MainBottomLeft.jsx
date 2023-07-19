@@ -29,7 +29,6 @@ const MainBottomLeft = ({ updateTrips }) => {
     fetch(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("fetchData", data);
         if (data.result) {
           updateTrips(data);
         }

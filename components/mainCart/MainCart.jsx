@@ -6,22 +6,34 @@ import MainCartSum from "./MainCartSum";
 const MainCart = () => {
   const [cartData, setcartData] = useState(null);
 
+  const handleUpdateCardData = (data) => {
+    setcartData(data)
+  }
+
   useEffect(() => {
     fetch("http://localhost:3000/cart")
       .then((response) => response.json())
       .then((data) => {
-        console.log("cartData", data)
         if (data.result) {
           setcartData(data);
-        }
+        } 
       });
   }, []);
 
   return (
     <div className={styles.container}>
-      <p>My cart</p>
-      <MainCartList cartData={cartData}/>
-      <MainCartSum />
+      {cartData ? (
+        <>
+          <p>My cart</p>
+          <MainCartList cartData={cartData} handleUpdateCardData={handleUpdateCardData} />
+          <MainCartSum />
+        </>
+      ) : (
+        <div>
+          <p>No tickets in your cart</p>
+          <p>Why not plan a trip</p>
+        </div>
+      )}
     </div>
   );
 };
