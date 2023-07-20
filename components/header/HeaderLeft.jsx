@@ -1,9 +1,13 @@
+import Link from "next/link";
 import styles from "./HeaderLeft.module.css";
 
 const HeaderLeft = () => {
   return (
     <div className={styles.HeaderLeft}>
-      <p className={styles.p}>Tickethack</p>
+      <Link href="/">
+        <p className={styles.p}>Tickethack</p>
+      </Link>
+      
     </div>
   );
 };

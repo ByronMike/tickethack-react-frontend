@@ -7,8 +7,8 @@ const MainCart = () => {
   const [cartData, setcartData] = useState(null);
 
   const handleUpdateCardData = (data) => {
-    setcartData(data)
-  }
+    setcartData(data);
+  };
 
   useEffect(() => {
     fetch("http://localhost:3000/cart")
@@ -16,7 +16,7 @@ const MainCart = () => {
       .then((data) => {
         if (data.result) {
           setcartData(data);
-        } 
+        }
       });
   }, []);
 
@@ -25,7 +25,10 @@ const MainCart = () => {
       {cartData ? (
         <>
           <p>My cart</p>
-          <MainCartList cartData={cartData} handleUpdateCardData={handleUpdateCardData} />
+          <MainCartList
+            cartData={cartData}
+            handleUpdateCardData={handleUpdateCardData}
+          />
           <MainCartSum />
         </>
       ) : (

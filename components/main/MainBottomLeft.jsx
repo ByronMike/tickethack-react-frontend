@@ -49,6 +49,7 @@ const MainBottomLeft = ({ updateTrips }) => {
         value={arrival}
         placeholder="Arrival"
         className={styles.input}
+        style={{ marginTop: "0px", borderTop: "solid 2px grey" }}
         onChange={handleArrival}
       ></input>
       <input
