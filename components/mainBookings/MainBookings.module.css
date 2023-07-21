@@ -1,9 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 25%;
-    width: 25%;
-    background-color: white;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  width: 25%;
+  background-color: white;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0px 0px;
+  align-items: center;
+  min-height: 25%;
+  width: 45%;
+  background-color: white;
+}
+
+.li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  width: 600px;
+  flex-direction: row;
+  background-color: #f6eeef;
+  border-radius: 10px;
+  margin-bottom: 10px   
+}

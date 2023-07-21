@@ -36,11 +36,14 @@ const handleUpdateCardData = (data) => {
     fetch("http://localhost:3000/cart")
       .then((response) => response.json())
       .then((data) => {
+        console.log("cartData", cartData)
         if (data.result) {
           setCartData(data);
         }
       });
   }, []);
+
+
 
   return (
     <div className={styles.container} style={{ backgroundColor: "#F0F1F2" }}>

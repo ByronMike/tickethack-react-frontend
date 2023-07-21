@@ -2,6 +2,7 @@ import styles from "./MainBottomRight.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import trainPicture from "../../public/images/train.png";
+import notFoundPicture from "../../public/images/notfound.png"
 
 const MainBottomRight = ({ trips }) => {
   let content;
@@ -65,7 +66,7 @@ const MainBottomRight = ({ trips }) => {
     content = (
       <>
         <Image
-          src={trainPicture}
+          src={notFoundPicture}
           width={100}
           height={100}
           alt="Picture of the train"

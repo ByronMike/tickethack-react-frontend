@@ -29,7 +29,7 @@ const MainBottomLeft = ({ updateTrips }) => {
     fetch(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.result) {
+        if (data) {
           updateTrips(data);
         }
       });

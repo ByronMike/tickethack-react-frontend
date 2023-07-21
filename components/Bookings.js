@@ -1,4 +1,4 @@
-import styles from "../styles/Cart.module.css";
+import styles from "../styles/Bookings.module.css";
 import HeaderLeft from "./header/HeaderLeft";
 import HeaderRight from "./header/HeaderRight";
 import MainBookings from "./mainBookings/MainBookings";

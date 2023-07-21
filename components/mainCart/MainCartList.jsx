@@ -31,6 +31,7 @@ const MainCartList = ({ cartData, handleUpdateCardData }) => {
       {data.map((addedTrip) => (
         <li key={addedTrip.trip._id} className={styles.li}>
           <p>{addedTrip.trip.departure}</p>
+          {">"}
           <p>{addedTrip.trip.arrival}</p>
           <p>{`${addedTrip.hour}:${addedTrip.minute}`}</p>
           <p style={{fontWeight: "bold"}}>{addedTrip.trip.price}€</p>
