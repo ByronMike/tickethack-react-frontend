@@ -1,0 +1,20 @@
+.li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  width: 600px;
+  flex-direction: row;
+  background-color: #f6eeef;
+  border-radius: 10px;
+  margin-bottom: 10px   
+}
+
+.button {
+  width: 20px;
+  height: 15px;
+  background-color: #469e86;
+  border: #469e86;
+  border-radius: 5px;
+  color: white;
+}

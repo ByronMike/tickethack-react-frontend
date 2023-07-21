@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./MainBookings.module.css"
 const moment = require("moment");
 
 const MainBookings = () => {
@@ -17,13 +18,13 @@ const MainBookings = () => {
       });
   }, []);
   return (
-    <div>
+    <div >
       <p>MainBookings</p>
       <ul>
         {bookings &&
           bookings.map((booking) => {
             return (
-              <li key={booking.trip._id} class="booked-trip">
+              <li key={booking.trip._id}>
                 <span>
                   {booking.trip.departure} {">"} {booking.trip.arrival}
                 </span>

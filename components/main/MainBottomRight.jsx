@@ -33,7 +33,7 @@ const MainBottomRight = ({ trips }) => {
         style={{
           overflowY: "scroll",
           height: "400px",
-          width: "250px",
+          width: "300px",
           listStyleType: "none",
           padding: 0,
           margin: 0,
@@ -43,13 +43,16 @@ const MainBottomRight = ({ trips }) => {
           return (
             <li
               key={trip._id}
-              style={{ display: "flex", justifyContent: "flex-start" }}
+              className={styles.li}
             >
-              <p className={styles.p}>{trip.departure}</p>
+              <p className={styles.p}>{trip.departure} </p>
+              <p>{`>`}</p>
+              &nbsp;
               <p className={styles.p}>{trip.arrival}</p>
               <p className={styles.p}>{`${trip.hour}:${trip.minute}`}</p>
+              <p className={styles.p} style={{fontWeight: "bold"}}>{trip.price}€</p>
               <Link href="/cart">
-                <button onClick={() => handleUpdateTripBooking(trip._id)}>
+                <button className={styles.button} onClick={() => handleUpdateTripBooking(trip._id)}>
                   Book
                 </button>
               </Link>

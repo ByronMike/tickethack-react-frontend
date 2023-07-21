@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./MainCartList.module.css"
 
 const MainCartList = ({ cartData, handleUpdateCardData }) => {
   const [data, setData] = useState([]);
@@ -28,11 +29,12 @@ const MainCartList = ({ cartData, handleUpdateCardData }) => {
   return data ? (
     <ul>
       {data.map((addedTrip) => (
-        <li key={addedTrip.trip._id}>
+        <li key={addedTrip.trip._id} className={styles.li}>
           <p>{addedTrip.trip.departure}</p>
           <p>{addedTrip.trip.arrival}</p>
           <p>{`${addedTrip.hour}:${addedTrip.minute}`}</p>
-          <button onClick={() => handleRemoveFromCart(addedTrip.trip._id)}>
+          <p style={{fontWeight: "bold"}}>{addedTrip.trip.price}€</p>
+          <button className={styles.button} onClick={() => handleRemoveFromCart(addedTrip.trip._id)}>
             X
           </button>
         </li>
